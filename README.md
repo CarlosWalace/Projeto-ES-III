@@ -25,7 +25,6 @@ O projeto foi elaborado durante as aulas de Egenharia de Software na PUC Minas, 
 * Pedro Henrique Ronchini
 
 # Wiframes baseados nas historias
-[Figma - Wireframes Completo](https://www.figma.com/file/rGY6m3p8qBt9tBS18eAw1G/Kanban?type=design&node-id=0%3A1&t=ZBBhgjPlBXtyDx8k-1)
 ## Autenticação do autor
 ![image](https://github.com/mayconbr/engenhariaIII/assets/65423721/de5b8546-1f25-4ec8-b81b-83cfd518697c)
 ## Criação do board
@@ -103,17 +102,44 @@ Consiste no meio para medição do tamanho de software em termos da visão do us
 * Entrada: email cadastrado |Senha: incorreta -> Negado
 * Entrada: email n cadas... |Senha: n existe  -> Negado
 
+Roteiro para etapa Autenticação do autor
+Campo testado (email)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |     email válido    |   Autenticado
+      C2      |    email inválido   |   email inválido
+      C3      |     email vazio     |   email inválido
+      
+Campo testado (senha)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |     senha válida    |   Autenticado
+      C2      |    senha inválida   |   senha inválida
+      C3      |     senha vazia     |   senha inválida
+      
+
 ### Criação do board 
 * Entrada: Nome board |Clica criar -> Cria board
 * Entrada: Nome board |Clica X     -> Não cria board
 * Entrada: Vazio      |Clica X     -> Não cria board
 * Entrada: Vazio      |Clica criar -> Não cria board
 
+Roteiro para etapa Ciação da board
+Campo testado (nome)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |    nome da board    |   board criada
+      C2      |     nome vazio      |   insira um nome para a board
+   
 ### Criação do card 
 * Entrada: Nome card|Clica criar -> Cria card
 * Entrada: Vazio    |Clica criar -> Não cria card
 * Entrada: Vazio    |Clica no X  -> Não cria card
 * Entrada Nome card |Clica no X  -> Não cria card 
+
+Roteiro para etapa criação do card
+Campo testado (Título do card)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |     Nome do card    |   Cria card
+      C2      |      Nome Vazio     |   É necessário indicar um título
+
 
 ### Criação da movimentação dos card's
 * Entrada: Pega card  | Joga card em outra board -> Movimenta card
@@ -121,11 +147,35 @@ Consiste no meio para medição do tamanho de software em termos da visão do us
 * Entrada: N pega card| Movimenta                -> Não movimenta o card
 * Entrada: Pega card  | Joga card na mesma board -> Não moviemnta o card
 
+
 ### Edição do card
-* Entrada: titulo muda  | muda   descrição | muda label | muda task | salvar -> Card editado
-* Entrada: titulo N muda| muda   descrição | muda label | muda task | salvar -> Card editado
-* Entrada: titulo N muda| muda N descrição | muda label | muda task | salvar -> Card editado
-* Entrada: .....
-* Entrada: ..... 
-* Entrada: .....
-* Tudo edita um card, se for clicado em salvar.
+//teste
+Roteiro para etapa edição do card
+Campo testado (TÍTULO)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |      Título muda    |   Card editado
+      C2      |      Título vazio   |   É necessário indicar um novo título
+
+
+Campo testado (DESCRIÇÃO)
+Caso de Teste |       Entrada        |   Saída Esperada
+      C1      |    Descrição muda    |   Card editado
+      C2      |    Descrição vazia   |   É necessário indicar um novo título
+
+
+Campo testado (DATA)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |      Data  muda     |   Card editado
+
+
+Campo testado (LABELS)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |     Label muda      |   Card editado
+      C2      |     Label não muda  |   Card editado
+
+
+Campo testado (TASKS)
+Caso de Teste |       Entrada       |   Saída Esperada
+      C1      |       Task muda     |   Card editado
+      C2      |     Task não muda   |   É necessário indicar um novo título
+
